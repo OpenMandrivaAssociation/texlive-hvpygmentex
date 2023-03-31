@@ -1,6 +1,6 @@
 Name:		texlive-hvpygmentex
 Version:	62405
-Release:	1
+Release:	2
 Summary:	Syntax-Highlighting of program code
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/hvpygmentex
