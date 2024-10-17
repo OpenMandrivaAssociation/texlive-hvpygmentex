@@ -3,7 +3,7 @@ Version:	62405
 Release:	2
 Summary:	Syntax-Highlighting of program code
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/hvpygmentex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/hvpygmentex
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hvpygmentex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hvpygmentex.doc.r%{version}.tar.xz
