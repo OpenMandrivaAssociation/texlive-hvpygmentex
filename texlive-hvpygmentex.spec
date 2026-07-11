@@ -1,39 +1,23 @@
-Name:		texlive-hvpygmentex
-Version:	62405
-Release:	2
+%global tl_name hvpygmentex
+%global tl_revision 62405
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.01
+Release:	%{tl_revision}.1
 Summary:	Syntax-Highlighting of program code
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/hvpygmentex
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hvpygmentex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hvpygmentex.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hvpygmentex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hvpygmentex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package is based on pygmentex but provides an automatic run
-from within the document itself, with the option
---shell-escape. It does not need the additional action by the
-user to run the external program pygmentize to create the code
-snippets.
+The package is based on pygmentex but provides an automatic run from
+within the document itself, with the option --shell-escape. It does not
+need the additional action by the user to run the external program
+pygmentize to create the code snippets.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/hvpygmentex
-%doc %{_texmfdistdir}/doc/latex/hvpygmentex
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
